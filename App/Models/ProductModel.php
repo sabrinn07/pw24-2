@@ -8,6 +8,7 @@ require __DIR__ . "/Manager.php";
 
 
 class ProductModel extends Manager{
+	// ATRIBUTOS
 	private $table_name  = 'produtos';
 	protected $conn;
 	protected $result;
@@ -28,6 +29,7 @@ class ProductModel extends Manager{
 		$this->conn = Manager::getConnection();
 	}
 
+	// METODOS
 
 	// Não sei se em inglês 'promoção' é 'in offer', 'discount' ou 'promotion',
 	// Nesse caso, vai 'promotion' mesmo
@@ -47,7 +49,7 @@ class ProductModel extends Manager{
 	}
 
 	public function searchByName(string $name){
-		$query "SELECT * FROM {$this->table_name} WHERE nome = :product_name";
+		$query = "SELECT * FROM {$this->table_name} WHERE nome = :product_name ";
 
 		$stmt = $this->conn->prepare($query);
 		$stmt->execute(['product_name' => $name]);

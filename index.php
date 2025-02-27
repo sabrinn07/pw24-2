@@ -1,5 +1,15 @@
 <?php
 
+session_start();
+
+$_SESSION['loggedIn'] = true;
+$_SESSION['cart'];
+
+// TESTE DO CARRINHO
+$_SESSION['cart'] = array(
+    'Iphone' => 13000,
+    'Fone de ouvidio Wireless' => 320 
+);
 
 require __DIR__ . '/App/Models/ProductModel.php';
 
@@ -34,27 +44,15 @@ require __DIR__ . '/App/Models/ProductModel.php';
                     </div>
                 </form> 
                 <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link">Seu carrinho</a>
+                    <a href="<?php echo "/App/Router/routes.php?action=view-cart"?>" class="nav-item nav-link">Seu carrinho</a>
                 </div>
             </div>
         </div>
     </nav>
-
-    <?php 
-        // DEBUG
-
-        $produtosModel = new ProductModel();
-        $produtosModel->getAllProductsInPromotion();
-
-        $prodEmPromo = $produtosModel->getResult();
-        var_dump($prodEmPromo);
-        // FIM DO DEBUG
-    ?>
-
     <!-- Menu lateral -->
     <div id="fixed_column">
         <h5>Produtos</h5>
-        <p>Promoções</p>
+        <p><a href="<?php echo "/App/Router/routes.php?action=view-promo"; ?>">Promoções</a></p>
         <!-- Link para a seção de Material Básico -->
         <p><a href="#secaoMaterialBasico" style="text-decoration: none; color: inherit;">Material Básico</a></p>
         <p><a href ="secaoHidraulica" style= "text-decoration: none; color: inherit;" >Hidráulica</a></p>
