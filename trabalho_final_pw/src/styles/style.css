@@ -1,0 +1,47 @@
+#fixed_column{
+    width: 15%;
+    margin-left: 1%;
+    margin-right: 5%;
+    float: left;
+    background-color: gainsboro;
+}
+#card1{
+    width: 20%;
+    margin-left: 5%;
+}
+#card2{
+    width: 20%;
+    margin-left: 5%;
+}
+#card3{
+    width: 20%;
+    margin-left: 5%;
+}
+#mother{
+    display: flex;
+    flex-direction: row;
+}
+
+:root {
+    --bs-navbar-bg: #007bff; /* Cor de fundo da navbar */
+    --bs-navbar-color: white; /* Cor do texto da navbar */
+}
+
+.navbar {
+    background-color: var(--bs-navbar-bg);
+    color: var(--bs-navbar-color);
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: var(--bs-navbar-color);
+}
+
+.navbar-toggler-icon {
+    background-color: var(--bs-navbar-color);
+}
+
+
+#footer{
+    clear: left;
+    background-color: rgb(161, 161, 161);
+}
